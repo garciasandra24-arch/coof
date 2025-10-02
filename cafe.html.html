@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafetería La Taza</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20;
+      padding: 30;
+      background-color: #f8f8f8;
+    }
+    header {
+      background-color: #6f4e37;
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #a47148;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 30px;
+      padding: 25px 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    nav button:hover {
+      background-color: #836141;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+    .active {
+      display: block;
+    }
+    .tabla-precios {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .tabla-precios th, .tabla-precios td {
+      border: 1px solid #554d4d;
+      padding: 30px;
+      text-align: center;
+    }
+    .tabla-precios th {
+      background-color: #5c3a0a;
+    }
+    footer {
+      background-color: #574f49;
+      color: rgb(145, 133, 133);
+      text-align: center;
+      padding: 30px;
+      margin-top: 20px;
+    }
+    .galeria img {
+      margin: 30px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cafetería La Taza</h1>
+    <p>El mejor café de la ciudad</p>
+  </header>
+
+  <!-- Pestañas -->
+  <nav>
+    <button onclick="openTab('inicio')">Inicio</button>
+    <button onclick="openTab('mision')">Misión y Visión</button>
+    <button onclick="openTab('menu')">Menú</button>
+    <button onclick="openTab('bebidas')">Bebidas</button>
+    <button onclick="openTab('faq')">FAQ</button>
+    <button onclick="openTab('objetivo')">Objetivo</button>
+    <button onclick="openTab('servicios')">Servicios</button>
+    <button onclick="openTab('contacto')">Contacto</button>
+  </nav>
+
+  <!-- Contenido de pestañas -->
+  <section id="inicio" class="tab-content active">
+    <h2>Bienvenidos a nuestra cafetería</h2>
+    <p>En <strong>Cafetería La Taza</strong> ofrecemos café de alta calidad, acompañado de pan artesanal y un ambiente acogedor.</p>
+  </section>
+
+  <section id="mision" class="tab-content">
+    <h2>Misión, Visión y Política de Calidad</h2>
+    <p><strong>Misión:</strong> Servir café de calidad excepcional acompañado de productos frescos, en un ambiente cálido y acogedor.</p>
+    <p><strong>Visión:</strong> Convertirnos en la cafetería preferida de la comunidad.</p>
+    <p><strong>Política de Calidad:</strong> Mantener ingredientes frescos y un excelente servicio.</p>
+  </section>
+
+  <section id="menu" class="tab-content">
+    <h2>Menú de la Cafetería</h2>
+    <table class="tabla-precios">
+      <tr><th>Bebida</th><th>Precio</th></tr>
+      <tr><td>Café Americano</td><td>$30</td></tr>
+      <tr><td>Capuchino</td><td>$40</td></tr>
+      <tr><td>Latte</td><td>$45</td></tr>
+      <tr><td>Té Verde</td><td>$35</td></tr>
+    </table>
+  </section>
+
+  <section id="bebidas" class="tab-content">
+    <h2>Bebidas</h2>
+    <p>Aquí algunas de nuestras bebidas:</p>
+    <div class="galeria">
+      <img src="cft.jpg.jpg" width="200" alt="Café">
+      <img src="capuchino.jpg" width="200" alt="Capuchino">
+      <img src="latte.jpg" width="200" alt="Latte">
+      <img src="te verde.jpg" width="200" alt="Té verde">
+    </div>
+  </section>
+
+  <section id="faq" class="tab-content">
+    <h2>Preguntas Frecuentes</h2>
+    <ul>
+      <li><strong>¿Dónde están ubicados?</strong> - En el centro de la ciudad.</li>
+      <li><strong>¿Ofrecen servicio para llevar?</strong> - Sí, todo se puede pedir para llevar.</li>
+      <li><strong>¿Opciones veganas?</strong> - Sí, contamos con leches vegetales y pan vegano.</li>
+      <li><strong>¿Se puede pagar con tarjeta?</strong> - Sí, aceptamos crédito y débito.</li>
+    </ul>
+  </section>
+
+  <section id="objetivo" class="tab-content">
+    <h2>¿Qué queremos lograr?</h2>
+    <p>Nuestra página web busca dar a conocer la esencia de nuestra cafetería y acercar a los clientes a nuestro menú.</p>
+  </section>
+
+  <section id="servicios" class="tab-content">
+    <h2>Lo que ofrecemos</h2>
+    <ul>
+      <li>Café artesanal y orgánico</li>
+      <li>Postres caseros</li>
+      <li>Promociones especiales</li>
+      <li>Espacios para estudiar y trabajar</li>
+    </ul>
+  </section>
+
+  <section id="contacto" class="tab-content">
+    <h2>Contacto</h2>
+    <p>Teléfono: <strong>(3411012540)</strong></p>
+    <p>Email: <strong>contacto@lataza.com</strong></p>
+  </section>
+
+  <footer>
+    <p>&copy; 
+  </footer>
+
+  <script>
+    function openTab(tabName) {
+      let contents = document.querySelectorAll(".tab-content");
+      contents.forEach(c => c.style.display = "none");
+      document.getElementById(tabName).style.display = "block";
+    }
+
+    // Mostrar la primera pestaña por defecto
+    openTab("inicio");
+  </script>
+</body>
+</html>
